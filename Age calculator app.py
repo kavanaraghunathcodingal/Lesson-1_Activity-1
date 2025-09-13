@@ -10,9 +10,10 @@ def calculate_age():
         year = int(year_entry.get())
         today = date.today()
         age = today.year - year
-        if (today.month, today.day) < (month, day):
+       if (today.month, today.day) < (month, day):
             age -= 1
-            result_label.config(text=f"Your Age: {age} years")
+
+        result_label.config(text=f"Your Age: {age} years")
     except ValueError:
         result_label.config(text="Please enter valid numbers")
 tk.Label(root, text="Enter Birth Day:").pack()
@@ -28,4 +29,5 @@ calc_button = tk.Button(root, text="Calculate Age", command=calculate_age)
 calc_button.pack(pady=10)
 result_label = tk.Label(root, text="", font=("Arial", 12))
 result_label.pack()
+
 root.mainloop()
